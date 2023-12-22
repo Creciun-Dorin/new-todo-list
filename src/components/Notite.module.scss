@@ -1,0 +1,48 @@
+li {
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        h1 {
+            padding-left: 15px;
+        }
+
+        .grup {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            button {
+                border: none;
+                background-color: transparent;
+
+                svg {
+                    fill: grey;
+                    transition: fill .3s ease-in;
+                }
+
+                &:hover {
+                    svg {
+                        fill: #dc3545;
+                    }
+                }
+            }
+        }
+    }
+}
+
+ol {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.indeplinit {
+    text-decoration: line-through !important;
+    h1,main{
+        color: grey !important;
+    }
+}
