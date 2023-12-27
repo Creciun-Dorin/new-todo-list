@@ -10,7 +10,6 @@ const AdaugaNotite = () => {
     const [title, setTitle] = useState('');
     const [desk, setDesk] = useState('');
     const [local, setLocal] = useState(JSON.parse(localStorage.getItem('notite')) || []);
-
     class item {
         constructor(title, description, value) {
             this.title = title;
@@ -51,8 +50,14 @@ const AdaugaNotite = () => {
                         value={title}
                         onChange={checkText}
                         isInvalid={title.length < 5 || title.length > 35}
-                        isValid={title.length > 5 || title.length < 35}
+                        isValid={title.length >= 5 && title.length <= 35}
                     />
+                    <Form.Control.Feedback type="invalid">
+                        Titlul trebuie să aibă între 5 și 35 de caractere.
+                    </Form.Control.Feedback>
+                    <Form.Control.Feedback type="valid">
+                        Titlul este valid.
+                    </Form.Control.Feedback>
                 </Form.Group>
                 <Form.Group controlId="exampleForm.ControlTextarea1">
                     <Form.Label>Example textarea</Form.Label>
@@ -63,11 +68,17 @@ const AdaugaNotite = () => {
                         value={desk}
                         onChange={checkDesk}
                         isInvalid={desk.length < 5 || desk.length > 150}
-                        isValid={desk.length > 5 || desk.length < 150}
+                        isValid={desk.length >= 5 && desk.length <= 150}
                     />
+                    <Form.Control.Feedback type="invalid">
+                        Descrierea trebuie să aibă între 5 și 150 de caractere.
+                    </Form.Control.Feedback>
+                    <Form.Control.Feedback type="valid">
+                        Descrierea este valida.
+                    </Form.Control.Feedback>
                 </Form.Group>
             </Form>
-            <Button variant="success" onClick={checkNot}>Adauga</Button>
+            <Button variant="success" onClick={checkNot} disabled={!(title.length >= 5 && title.length <= 35 && desk.length >= 5 && desk.length <= 150)}>Adauga</Button>
         </form>
     )
 }

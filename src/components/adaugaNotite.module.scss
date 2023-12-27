@@ -34,3 +34,7 @@
     flex-direction: column;
     width: 100%;
 }
+
+button:disabled{
+    opacity: .3;
+}

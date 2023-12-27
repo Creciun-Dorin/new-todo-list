@@ -38,6 +38,16 @@ ol {
     gap: 35px;
     padding: 30px;
     box-sizing: border-box;
+
+    h1{
+        display: block;
+        margin: 0 auto;
+        img{
+            width: 248.875px;
+            height: 215.875px;
+            margin-left: 35px;
+        }
+    }
 }
 
 .indeplinit {
